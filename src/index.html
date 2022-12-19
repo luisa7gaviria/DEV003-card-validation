@@ -18,12 +18,20 @@
         <input id="name" type="text" value="" minlength="3" pattern="[a-zA-Z ]{2,254}" required>
         <label class="num">Ingresa debajo el número de tu tarjeta</label> 
         <br>
-        <input id="card" type="text" name="" value="" minlength="1" maxlength="16"  required placeholder="################">
+        
+        <input id="card" type="text" name="" value="" minlength="13" maxlength="16" placeholder="################">
+        <div id = "typeErrorNumber"> Error de formato. Solo números</div>
         <br>
         <button id="btn" type="submit" >Validar</button>
       </div>
     </form>
+    <div id="finalbox" class="finalbox">
       
+      <span id="finalt"></span>
+      <span id="finalv"></span>
+
+    </div>
+    
     </main>
     <footer>
       
