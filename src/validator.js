@@ -1,6 +1,6 @@
 const validator = {
   maskify: function(text) {
-  
+    
     const cardNum= text.length;
     let mask = "";
     if (cardNum > 4){
@@ -13,18 +13,17 @@ const validator = {
     }else{
       return text;
     }
-
+  
   },
-   
-  
-  
+     
+    
+    
   isValid: function(vTarjeta) {
-
     const cardNum = vTarjeta.toString().split('').reverse(); 
     const plus = []; 
-
+  
     cardNum.forEach((e,i) =>{ 
-      
+        
       if(i%2 !==0){ 
         const pairNum = e*2; 
         if( pairNum >= 10){ 
@@ -34,10 +33,10 @@ const validator = {
         }
       } else{
         plus.push(parseInt(e)); 
-    
+      
       }
     });
-
+  
     const totalPlus = plus.reduce((a , b) => a + b );{ 
       if(totalPlus %10 === 0){                        
         return true;
@@ -45,11 +44,10 @@ const validator = {
         return false;
       }
     }
-  
+    
   }
+  
+      
 }
-
+  
 export default validator;
-
-
-

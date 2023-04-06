@@ -22,5 +22,3 @@ Generar confianza en los usuarios cuando quieran validar sus tarjetas, ya que es
 Estamos ahorrando muchos minutos importantes, el tiempo es valioso y los clientes también, asi que pueden ir atendiendo unos cuantos mientras otros que piensan pagar de otra manera van validando sus tarjetas, beneficia mucho a la organización de la tienda y no van a necesitar a alguien ocupado validando tarjetas de crédito.
 
 * La interfaz del programa está pensada en colores agradables a la vista, que no sean demasiado vivos pero tampoco demasiado oscuros y posee un diseño simple ya que el único fin es validar el número de la tarjeta.
-
-

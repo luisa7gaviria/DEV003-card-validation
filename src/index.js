@@ -2,10 +2,9 @@ import validator from './validator.js';
 
 console.log(validator);
 const formulario = document.getElementById('btn');
-document.getElementById('btn').disabled = true;
+document.getElementById('btn').disabled = false;
 document.getElementById('card').addEventListener("keyup" , errorNumber);
 document.getElementById('card').addEventListener("keyup" , habilitate);
-
 
 function data(){
   const nombp=document.getElementById("name").value;
@@ -18,10 +17,11 @@ function data(){
 
   }else{ 
     if(cardp === "")
-    alert('El número de tarjeta es obligatorio')
+      alert('El número de tarjeta es obligatorio')
     document.getElementById("card").focus();
 
   }
+  
 }
 function errorNumber(){
   const tarjetNum = document.getElementById('card') ;
@@ -45,15 +45,12 @@ function habilitate(){
 
   } else if (document.getElementById('card').value.length >= 12){
     document.getElementById('btn').disabled = false; 
-    }else{
-      document.getElementById('btn').disabled = true ;
+  }else{
+    document.getElementById('btn').disabled = true ;
   }
     
 
 }
-
-   
-  
 
 
 function showValidation(){
@@ -80,10 +77,10 @@ function showValidation(){
   }
   
 }
- formulario.addEventListener("click" , (e) =>{
+formulario.addEventListener("click" , (e) =>{
   e.preventDefault();
   data();
   showValidation();
 
- }
- )
+}
+);
