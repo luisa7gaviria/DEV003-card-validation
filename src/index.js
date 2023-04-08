@@ -11,7 +11,6 @@ document.getElementById('card').addEventListener("keyup" , habilitate);
 function data(){
   const nombp=document.getElementById("name").value;
   const cardp=document.getElementById("card").value;
-  
  
   if( nombp === ""){
     alert('El nombre es obligatorio')
