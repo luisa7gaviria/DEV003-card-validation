@@ -1,6 +1,8 @@
 import validator from './validator.js';
+import mdLinks from '/lu-md-links/index.js';
 
 console.log(validator);
+console.log(mdLinks)
 const formulario = document.getElementById('btn');
 document.getElementById('btn').disabled = false;
 document.getElementById('card').addEventListener("keyup" , errorNumber);
