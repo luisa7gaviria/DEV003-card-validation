@@ -1,12 +1,10 @@
 import validator from './validator.js';
-import mdLinks from '/lu-md-links/index.js';
 
-console.log(validator);
-console.log(mdLinks)
 const formulario = document.getElementById('btn');
 document.getElementById('btn').disabled = false;
 document.getElementById('card').addEventListener("keyup" , errorNumber);
 document.getElementById('card').addEventListener("keyup" , habilitate);
+document.getElementById('name').addEventListener("keyup", habilitateName)
 
 function data(){
   const nombp=document.getElementById("name").value;
@@ -36,6 +34,16 @@ function errorNumber(){
   
 }
 
+function habilitateName() {
+  const name = document.getElementById('name')
+
+  if (name.value.length >= 5) {
+    document.getElementById('btn').disabled = false;
+  } else {
+    document.getElementById('btn').disabled = true
+  }
+}
+
 function habilitate(){
   const regE = /[A-z]/g;
   const onlyNum = document.getElementById('card');
@@ -58,6 +66,7 @@ function showValidation(){
   const tarjeta = document.getElementById("card").value;
   const mascara = validator.maskify(tarjeta);
   const finalBox = document.getElementById("finalbox");
+  const user = document.getElementById('name')
 
   document.getElementById("card").value = mascara;
 
@@ -65,13 +74,13 @@ function showValidation(){
 
   
   if(tvalid === true){
-    document.getElementById("finalt").innerHTML = "Tu tarjeta: " + validator.maskify(tarjeta);
+    document.getElementById("finalt").innerHTML = user.value + ", tu tarjeta: " + mascara;
     document.getElementById("finalv").innerHTML = " es válida ✅";
     finalBox.style.borderColor = "green";
  
 
   }else{
-    document.getElementById("finalt").innerHTML = "Tu tarjeta " + validator.maskify(tarjeta);
+    document.getElementById("finalt").innerHTML = user.value +", tu tarjeta " + mascara;
     document.getElementById("finalv").innerHTML =" es inválida ❌";
     finalBox.style.borderColor = "red";
      
