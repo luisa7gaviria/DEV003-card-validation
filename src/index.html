@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header"> 
-      <h1> Bienvenido a Valcard</h1>
+      <h1> Bienvenido a <span class="valcard">Valcard</span></h1>
       <p>El sitio donde puedes validar tu tarjeta de crédito ¡sin ningún costo!</p>
     </header>
 
@@ -16,11 +16,11 @@
 
     <form id="formulario" method="get" action="">
 
+      <input id="name" type="text" value="" minlength="3" placeholder="Tu nombre" autocomplete="off" pattern="[a-zA-Z ]{2,254}" required>
       <label class="owner">Nombre del propietario</label>
-      <input id="name" type="text" value="" minlength="3" pattern="[a-zA-Z ]{2,254}" required>
-
-      <label class="num">Ingresa el número de tu tarjeta</label> 
-      <input id="card" type="text" name="" value="" minlength="13" maxlength="16" placeholder="################">
+ 
+      <input id="card" type="text" name="" value="" minlength="13" maxlength="16" placeholder="#### #### #### ####" autocomplete="off">
+      <label class="num">Ingresa el número de tu tarjeta</label>
 
       <div id = "typeErrorNumber"> Error de formato. Solo números</div>
       <input type="submit" id="btn"  value="Validar">
@@ -34,8 +34,8 @@
     
     </main>
     <footer>
-      <a href="https://github.com/luisa7gaviria" target="_blank" ><span>Developed by Luisa Gaviria</span></a>
-      
+      <a href="https://github.com/luisa7gaviria" target="_blank" > <span>&#x21AC</span> Developed by Luisa Gaviria<a> <br>
+      <a href="https://github.com/luisa7gaviria" target="_blank" ><span>&#x21AC</span> LinkedIn<a>
     </footer>
     <script src="index.js" type="module"></script>
   </body>
