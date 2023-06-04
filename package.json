@@ -20,7 +20,6 @@
     "gh-pages": "^3.1.0",
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
-    "lu-md-links": "github:luisa7gaviria/DEV003-md-links",
     "opener": "^1.5.1",
     "serve": "^13.0.2"
   },
