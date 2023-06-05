@@ -37,17 +37,10 @@ const validator = {
       }
     });
   
-    const totalPlus = plus.reduce((a , b) => a + b );{ 
-      if(totalPlus %10 === 0){                        
-        return true;
-      } else{
-        return false;
-      }
-    }
-    
-  }
-  
-      
+    const totalPlus = plus.reduce((a , b) => a + b );
+                       
+    return totalPlus % 10 === 0;  
+  }      
 }
   
 export default validator;

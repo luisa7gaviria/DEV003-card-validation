@@ -5,6 +5,7 @@
     
     <title>Valcard</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/favicon.png" />
   </head>
   <body>
     <header class="header"> 
@@ -23,19 +24,23 @@
       <label class="num">Ingresa el número de tu tarjeta</label>
 
       <div id = "typeErrorNumber"> Error de formato. Solo números</div>
-      <input type="submit" id="btn"  value="Validar">
+      <input type="submit" id="submitCard"  value="Validar">
     
     </form>
 
-    <div id="finalbox" class="finalbox">
-      <span id="finalt"></span>
-      <span id="finalv"></span>
-    </div>
+      <div class="validation_modal">
+        <div id="modal_content" class="modal_content">
+          <img class="validatedImg" >
+          <img class="closeBtn" src="./assets/square-rounded-x-filled.png" >
+          <span id="saved_card"></span>
+          <span id="validated_card"></span>
+        </div>
+      </div>
     
     </main>
     <footer>
       <a href="https://github.com/luisa7gaviria" target="_blank" > <span>&#x21AC</span> Developed by Luisa Gaviria<a> <br>
-      <a href="https://github.com/luisa7gaviria" target="_blank" ><span>&#x21AC</span> LinkedIn<a>
+      <a href="https://www.linkedin.com/in/luisafgaviria/" target="_blank" ><span>&#x21AC</span> LinkedIn<a>
     </footer>
     <script src="index.js" type="module"></script>
   </body>

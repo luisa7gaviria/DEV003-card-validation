@@ -1,96 +1,63 @@
 import validator from './validator.js';
 
-const formulario = document.getElementById('btn');
-document.getElementById('btn').disabled = false;
-document.getElementById('card').addEventListener("keyup" , errorNumber);
-document.getElementById('card').addEventListener("keyup" , habilitate);
-document.getElementById('name').addEventListener("keyup", habilitateName)
+const card = document.getElementById('card');
+const user = document.getElementById('name')
+const submitCard = document.getElementById('submitCard');
+const closeBtn = document.querySelector('.closeBtn');
+const modal = document.querySelector('.validation_modal');
+const setImg = document.querySelector('.validatedImg');
 
-function data(){
-  const nombp=document.getElementById("name").value;
-  const cardp=document.getElementById("card").value;
- 
-  if( nombp === ""){
-    alert('El nombre es obligatorio')
-    document.getElementById("name").focus();
+submitCard.disabled = true;
 
-  }else{ 
-    if(cardp === "")
-      alert('El número de tarjeta es obligatorio')
-    document.getElementById("card").focus();
-
-  }
+function enableSubmit(){
   
-}
-function errorNumber(){
-  const tarjetNum = document.getElementById('card') ;
   const error = document.getElementById('typeErrorNumber') ;
   const regExp = /[A-z]/g;
-  if(regExp.test(tarjetNum.value) === true){
-    error.style.display = "block";
-  } else{
-    error.style.display = "none";
-  }
-  
-}
 
-function habilitateName() {
-  const name = document.getElementById('name')
-
-  if (name.value.length >= 5) {
-    document.getElementById('btn').disabled = false;
+  if (regExp.test(card.value)) {
+    error.style.display = "block"
+    submitCard.disabled = true;
   } else {
-    document.getElementById('btn').disabled = true
-  }
-}
-
-function habilitate(){
-  const regE = /[A-z]/g;
-  const onlyNum = document.getElementById('card');
-
-
-  if (regE.test(onlyNum.value) === true ){
-    document.getElementById('btn').disabled = true;
-
-  } else if (document.getElementById('card').value.length >= 12){
-    document.getElementById('btn').disabled = false; 
-  }else{
-    document.getElementById('btn').disabled = true ;
-  }
+    card.value.length >= 12 ? submitCard.disabled = false : submitCard.disabled = true
+    error.style.display = "none"
     
-
+  }
 }
-
 
 function showValidation(){
-  const tarjeta = document.getElementById("card").value;
-  const mascara = validator.maskify(tarjeta);
-  const finalBox = document.getElementById("finalbox");
-  const user = document.getElementById('name')
-
-  document.getElementById("card").value = mascara;
-
-  const tvalid = validator.isValid(tarjeta);
-
   
+  const mascara = validator.maskify(card.value);
+  const tvalid = validator.isValid(card.value);
+  const savedCard = document.getElementById("saved_card");
+  const validatedCard = document.getElementById("validated_card");
+
   if(tvalid === true){
-    document.getElementById("finalt").innerHTML = user.value + ", tu tarjeta: " + mascara;
-    document.getElementById("finalv").innerHTML = " es válida ✅";
-    finalBox.style.borderColor = "green";
- 
+
+    setImg.setAttribute("src", "./assets/valid.png");
+    savedCard.innerHTML = user.value + ", tu tarjeta: " + mascara;
+    validatedCard.innerHTML = " es válida";
 
   }else{
-    document.getElementById("finalt").innerHTML = user.value +", tu tarjeta " + mascara;
-    document.getElementById("finalv").innerHTML =" es inválida ❌";
-    finalBox.style.borderColor = "red";
-     
-  }
-  
-}
-formulario.addEventListener("click" , (e) =>{
-  e.preventDefault();
-  data();
-  showValidation();
 
+    setImg.setAttribute("src", "./assets/invalid.png");
+    savedCard.innerHTML = user.value +", tu tarjeta " + mascara;
+    validatedCard.innerHTML =" es inválida "; 
+  }
+}
+
+card.addEventListener("keyup", () => {
+  enableSubmit();
+} )
+
+submitCard.addEventListener("click" , (e) =>{
+  e.preventDefault();
+  showValidation();
+  modal.style.display = "block";
+  card.value = '';
+  user.value = '';
+  submitCard.disabled = true;
 }
 );
+closeBtn.addEventListener("click" , () =>{
+  modal.style.display = "none";
+});
