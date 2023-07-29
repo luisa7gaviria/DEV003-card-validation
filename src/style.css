@@ -5,7 +5,6 @@ body{
     background-image: url('./assets/Background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* background:rgb(222, 220, 220); */
 }
 .header{
     height: 100px;
@@ -148,7 +147,8 @@ body{
 }
 #saved_card, #validated_card {
     position: relative;
-    top: 35%;
+    top: 50%;
+    left: 10%;
     cursor: default;
     
 }
@@ -179,3 +179,6 @@ footer a {
     text-decoration: none;
     
 }
+/* @media screen and (width <= 400px) {
+    
+} */
